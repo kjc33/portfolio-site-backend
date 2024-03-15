@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ContactFormController = require('../controllers/ContactFormController');
+const ContactFormEmailNotifications = require('../controllers/ContactFormEmailNotificationController');
 
 // GET - /api/contact-form-submissions - Get All Submissions
 router.get("/", ContactFormController.getAllContactFormSubmissions);
@@ -16,5 +17,8 @@ router.put("/:id", ContactFormController.updateContactFormSubmissionById);
 
 // DELETE - /api/contact-form-submissions/:id - Delete a Submission
 router.delete("/:id", ContactFormController.deleteContactFormSubmissionById);
+
+// POST - /send-email - Send an Email with Contact Form Submission Details
+router.post('/send-email', ContactFormEmailNotifications.sendContactFormEmail);
 
 module.exports = router;
