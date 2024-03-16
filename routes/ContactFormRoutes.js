@@ -19,6 +19,6 @@ router.put("/:id", ContactFormController.updateContactFormSubmissionById);
 router.delete("/:id", ContactFormController.deleteContactFormSubmissionById);
 
 // POST - Send an Email with Contact Form Submission Details
-router.post("/send-email", ContactFormEmailNotifications.sendContactFormEmail);
+router.post(process.env.SEND_EMAIL_ENDPOINT, ContactFormEmailNotifications.sendContactFormEmail);
 
 module.exports = router;
