@@ -6,7 +6,7 @@ exports.getAllContactFormSubmissions = async (req, res) => {
     const submissions = await ContactForm.findAll();
     res.status(200).json(submissions);
   } catch (error) {
-    console.error("Error fetching contact form submissions:", error); // Log the error
+    console.error("Error fetching contact form submissions:", error);
     res.status(500).json({ message: "An error occurred while getting the contact form submissions." });
   }
 };
