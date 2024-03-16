@@ -3,7 +3,6 @@ const express = require("express");
 const { testConnection } = require("./db/conn");
 const cors = require("cors");
 const ContactFormRoutes = require("./routes/ContactFormRoutes");
-const ContactFormEmailNotifications = require("./controllers/ContactFormEmailNotificationController");
 const errorHandler = require("./middlewares/ErrorMiddleware");
 
 const PORT = 8080;
@@ -15,9 +14,6 @@ app.use(cors());
 
 // Use Routes
 app.use(process.env.CONTACT_FORM_ROUTES, ContactFormRoutes);
-
-// Post Routes
-app.post(process.env.SEND_EMAIL_ENDPOINT, ContactFormEmailNotifications.sendContactFormEmail);
 
 // Error Middleware
 app.use(errorHandler);

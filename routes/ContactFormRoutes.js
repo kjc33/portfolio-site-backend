@@ -1,7 +1,7 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const ContactFormController = require('../controllers/ContactFormController');
-const ContactFormEmailNotifications = require('../controllers/ContactFormEmailNotificationController');
+const ContactFormController = require("../controllers/ContactFormController");
+const EmailRoutes = require("./EmailRoutes");
 
 // GET - Get All Submissions
 router.get("/", ContactFormController.getAllContactFormSubmissions);
@@ -18,7 +18,7 @@ router.put("/:id", ContactFormController.updateContactFormSubmissionById);
 // DELETE - Delete a Submission
 router.delete("/:id", ContactFormController.deleteContactFormSubmissionById);
 
-// POST - Send an Email with Contact Form Submission Details
-router.post(process.env.SEND_EMAIL_ENDPOINT, ContactFormEmailNotifications.sendContactFormEmail);
+// Use email routes
+router.use(EmailRoutes);
 
 module.exports = router;
