@@ -3,22 +3,22 @@ const router = express.Router();
 const ContactFormController = require('../controllers/ContactFormController');
 const ContactFormEmailNotifications = require('../controllers/ContactFormEmailNotificationController');
 
-// GET - /api/contact-form-submissions - Get All Submissions
+// GET - Get All Submissions
 router.get("/", ContactFormController.getAllContactFormSubmissions);
 
-// GET - /api/contact-form-submissions/:id - Get a Single Submission
+// GET - Get a Single Submission
 router.get("/:id", ContactFormController.getContactFormSubmissionById);
 
-// POST - /api/contact-form-submissions - Create a New Submission
+// POST - Create a New Submission
 router.post("/", ContactFormController.createContactFormSubmission);
 
-// PUT - /api/contact-form-submissions/:id - Update a Submission
+// PUT - Update a Submission
 router.put("/:id", ContactFormController.updateContactFormSubmissionById);
 
-// DELETE - /api/contact-form-submissions/:id - Delete a Submission
+// DELETE - Delete a Submission
 router.delete("/:id", ContactFormController.deleteContactFormSubmissionById);
 
-// POST - /send-email - Send an Email with Contact Form Submission Details
-router.post('/send-email', ContactFormEmailNotifications.sendContactFormEmail);
+// POST - Send an Email with Contact Form Submission Details
+router.post(process.env.SEND_EMAIL_ENDPOINT, ContactFormEmailNotifications.sendContactFormEmail);
 
 module.exports = router;

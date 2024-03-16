@@ -17,7 +17,7 @@ app.use(cors());
 app.use(process.env.CONTACT_FORM_ROUTES, ContactFormRoutes);
 
 // Post Routes
-app.post('/send-email', ContactFormEmailNotifications.sendContactFormEmail);
+app.post(process.env.SEND_EMAIL_ENDPOINT, ContactFormEmailNotifications.sendContactFormEmail);
 
 // Error Middleware
 app.use(errorHandler);

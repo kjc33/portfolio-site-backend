@@ -1,6 +1,6 @@
 const ContactForm = require("../models/ContactFormModel");
 
-// GET - /api/contact-form-submissions - Get All Submissions
+// GET - Get All Submissions
 exports.getAllContactFormSubmissions = async (req, res) => {
   try {
     const submissions = await ContactForm.findAll();
@@ -11,7 +11,7 @@ exports.getAllContactFormSubmissions = async (req, res) => {
   }
 };
 
-// GET - /api/contact-form-submissions/:id - Get a Single Submission
+// GET - Get a Single Submission
 exports.getContactFormSubmissionById = async (req, res) => {
   try {
     const submission = await ContactForm.findByPk(req.params.id);
@@ -25,7 +25,7 @@ exports.getContactFormSubmissionById = async (req, res) => {
   }
 };
 
-// POST - /api/contact-form-submissions - Create a New Submission
+// POST - Create a New Submission
 exports.createContactFormSubmission = async (req, res) => {
   try {
     const submission = await ContactForm.create({
@@ -42,7 +42,7 @@ exports.createContactFormSubmission = async (req, res) => {
   }
 };
 
-// PUT - /api/contact-form-submissions/:id - Update a Submission
+// PUT - Update a Submission
 exports.updateContactFormSubmissionById = async (req, res) => {
   try {
     const submission = await ContactForm.findByPk(req.params.id);
@@ -64,7 +64,7 @@ exports.updateContactFormSubmissionById = async (req, res) => {
   }
 };
 
-// DELETE - /api/contact-form-submissions/:id - Delete a Submission
+// DELETE - Delete a Submission
 exports.deleteContactFormSubmissionById = async (req, res) => {
   try {
     const submission = await ContactForm.findByPk(req.params.id);
