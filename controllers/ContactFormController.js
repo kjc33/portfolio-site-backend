@@ -37,7 +37,10 @@ exports.createContactFormSubmission = async (req, res) => {
       message: req.body.message,
     });
     res.status(201).json(submission);
+    // Redirect to the thank-you page after successful submission
+    res.redirect('/thank-you/');
   } catch (error) {
+    // If an error occurs during submission, respond with an error status
     res.status(500).json({ message: "An error occurred while creating the contact form submission." });
   }
 };

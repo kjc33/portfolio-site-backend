@@ -18,6 +18,11 @@ router.put("/:id", ContactFormController.updateContactFormSubmissionById);
 // DELETE - Delete a Submission
 router.delete("/:id", ContactFormController.deleteContactFormSubmissionById);
 
+// GET - Thank You Page
+router.get("/thank-you", (req, res) => {
+  res.send("Thank you for your submission!");
+});
+
 // Use email routes
 router.use(EmailRoutes);
 

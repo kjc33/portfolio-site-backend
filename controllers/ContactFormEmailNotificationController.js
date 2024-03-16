@@ -7,7 +7,7 @@ async function sendContactFormEmail(req, res) {
   }
 
   try {
-    const { first_name, last_name, email, phone, website, message } = req.body;
+    const { first_name, last_name, email, phone, website, message } = req.body || {};
 
     // Handle undefined values gracefully
     const emailBody = `
