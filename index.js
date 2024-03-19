@@ -1,8 +1,9 @@
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const { testConnection } = require("./db/conn");
 const cors = require("cors");
 const ContactFormRoutes = require("./routes/ContactFormRoutes");
+const EnvironmentalVariablesRoutes = require("./routes/EnvironmentalVariablesRoutes");
 const errorHandler = require("./middlewares/ErrorMiddleware");
 
 const PORT = 8080;
@@ -14,6 +15,7 @@ app.use(cors());
 
 // Use Routes
 app.use(process.env.CONTACT_FORM_ROUTES, ContactFormRoutes);
+app.use(EnvironmentalVariablesRoutes);
 
 // Error Middleware
 app.use(errorHandler);
