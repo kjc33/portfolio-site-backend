@@ -1,10 +1,10 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-app.get('/api/env', (req, res) => {
+router.get("/api/env", (req, res) => {
   // Retrieve environment variables from your backend's environment
   const envVariables = {
-    CONTACT_FORM_ROUTES: process.env.CONTACT_FORM_ROUTES
+    CONTACT_FORM_ROUTES: process.env.CONTACT_FORM_ROUTES,
   };
 
   // Send environment variables as JSON response
