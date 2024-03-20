@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const ContactFormController = require("../controllers/ContactFormController");
-const EmailRoutes = require("./EmailRoutes");
 
 // GET - Thank You Page - CONTACT_FORM_ROUTES URL + /thank-you from .env 
 router.get("/thank-you", (req, res) => {
@@ -22,8 +21,5 @@ router.post("/", ContactFormController.createContactFormSubmission);
 
 // DELETE - Delete a Submission
 // router.delete("/:id", ContactFormController.deleteContactFormSubmissionById);
-
-// Use email routes
-// router.use(EmailRoutes);
 
 module.exports = router;
