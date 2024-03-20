@@ -22,21 +22,21 @@ async function sendContactFormEmail(req, res) {
     });
 
     await transporter.sendMail({
-      from: process.env.FROM_EMAIL, // This should be your verified email address
-      to: process.env.TO_EMAIL, // This should be your verified email address
+      from: process.env.FROM_EMAIL,
+      to: process.env.TO_EMAIL,
       subject: "New Contact Form Submission",
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p>You have received a new contact form submission:</p>
-        <table border="1">
-          <tr><th>Field</th><th>Value</th></tr>
-          <tr><td>First Name</td><td>${first_name}</td></tr>
-          <tr><td>Last Name</td><td>${last_name}</td></tr>
-          <tr><td>Email</td><td>${email}</td></tr>
-          <tr><td>Phone</td><td>${phone}</td></tr>
-          <tr><td>Website</td><td>${website}</td></tr>
-          <tr><td>Message</td><td>${message}</td></tr>
-        </table>
+      <h2 style="color: #333;">New Contact Submission from ${first_name} ${last_name}</h2>
+      <p style="font-size: 16px;">You have received a new contact form submission ${first_name} ${last_name}:</p>
+      <table border="1" style="border-collapse: collapse;">
+        <tr><th style="padding: 10px; background-color: #f2f2f2;">Field</th><th style="padding: 10px; background-color: #f2f2f2;">Value</th></tr>
+        <tr><td style="padding: 10px;">First Name</td><td style="padding: 10px;">${first_name}</td></tr>
+        <tr><td style="padding: 10px;">Last Name</td><td style="padding: 10px;">${last_name}</td></tr>
+        <tr><td style="padding: 10px;">Email</td><td style="padding: 10px;">${email}</td></tr>
+        <tr><td style="padding: 10px;">Phone</td><td style="padding: 10px;">${phone}</td></tr>
+        <tr><td style="padding: 10px;">Website</td><td style="padding: 10px;">${website}</td></tr>
+        <tr><td style="padding: 10px;">Message</td><td style="padding: 10px;">${message}</td></tr>
+      </table>
       `
     });
     console.log("Email sent");
