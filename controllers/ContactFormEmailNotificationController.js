@@ -25,7 +25,7 @@ async function sendContactFormEmail(req, res) {
       to: process.env.TO_EMAIL,
       subject: `New Contact Form Submission from ${first_name} ${last_name}`,
       html: `
-      <h2 style="color: #333;">New Contact Submission from ${first_name} ${last_name}</h2>
+      <h2 style="color: #333;">New Contact Form Submission from ${first_name} ${last_name}</h2>
       <p style="font-size: 16px;">You have received a new contact form submission:</p>
       <table border="1" style="border-collapse: collapse;">
         <tr style="text-align: left;"><th style="padding: 10px; background-color: #dcdcdc; width: 80px;">Field</th><th style="padding: 10px; background-color: #dcdcdc;">Value</th></tr>
