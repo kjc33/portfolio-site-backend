@@ -23,7 +23,7 @@ async function sendContactFormEmail(req, res) {
     await transporter.sendMail({
       from: process.env.FROM_EMAIL,
       to: process.env.TO_EMAIL,
-      subject: "New Contact Form Submission",
+      subject: `New Contact Form Submission from ${first_name} ${last_name}`,
       html: `
       <h2 style="color: #333;">New Contact Submission from ${first_name} ${last_name}</h2>
       <p style="font-size: 16px;">You have received a new contact form submission:</p>
