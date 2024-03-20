@@ -28,7 +28,7 @@ async function sendContactFormEmail(req, res) {
       <h2 style="color: #333;">New Contact Submission from ${first_name} ${last_name}</h2>
       <p style="font-size: 16px;">You have received a new contact form submission:</p>
       <table border="1" style="border-collapse: collapse;">
-        <tr style="text-align: left;"><th style="padding: 10px; background-color: #f2f2f2; width: 80px;">Field</th><th style="padding: 10px; background-color: #f2f2f2;">Value</th></tr>
+        <tr style="text-align: left;"><th style="padding: 10px; background-color: #dcdcdc; width: 80px;">Field</th><th style="padding: 10px; background-color: #dcdcdc;">Value</th></tr>
         <tr><td style="padding: 10px;">First Name</td><td style="padding: 10px;">${first_name}</td></tr>
         <tr><td style="padding: 10px;">Last Name</td><td style="padding: 10px;">${last_name}</td></tr>
         <tr><td style="padding: 10px;">Email</td><td style="padding: 10px;">${email}</td></tr>
