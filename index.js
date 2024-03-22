@@ -17,7 +17,7 @@ app.use(cors());
 // Use Routes
 app.use("/api/contact", ContactFormRoutes);
 app.use("/api/contact-form", EmailRoutes);
-app.use("/sitemap.xml", XmlSitemapRoutes)
+app.use("/sitemap.xml", XmlSitemapRoutes);
 
 // Error Middleware
 app.use(errorHandler);

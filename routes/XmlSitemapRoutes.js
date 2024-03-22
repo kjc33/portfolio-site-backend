@@ -3,8 +3,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   res.header("Content-Type", "application/xml");
-  res.send(`
-    <?xml version="1.0" encoding="UTF-8"?>
+  res.send(`<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
         <loc>https://www.kylejohnchin.com/</loc>
@@ -13,8 +12,7 @@ router.get("/", (req, res) => {
         <priority>1.0</priority>
       </url>
       <!-- Add more URLs here -->
-    </urlset>
- `);
+    </urlset>`);
 });
 
 module.exports = router;
