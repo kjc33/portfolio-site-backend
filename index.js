@@ -4,6 +4,7 @@ const { testConnection } = require("./db/conn");
 const cors = require("cors");
 const ContactFormRoutes = require("./routes/ContactFormRoutes");
 const EmailRoutes = require("./routes/EmailRoutes");
+const XmlSitemapRoutes = require("./routes/XmlSitemapRoutes");
 const errorHandler = require("./middlewares/ErrorMiddleware");
 
 const PORT = 8080;
@@ -16,6 +17,7 @@ app.use(cors());
 // Use Routes
 app.use("/api/contact", ContactFormRoutes);
 app.use("/api/contact-form", EmailRoutes);
+app.use("/sitemap.xml", XmlSitemapRoutes)
 
 // Error Middleware
 app.use(errorHandler);
